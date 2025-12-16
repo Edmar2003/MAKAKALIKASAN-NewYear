@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Gallery | Memories Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="gallery-header">
+        <div class="header-content">
+            <h1 class="gallery-title">Memory Gallery</h1>
+            <p class="gallery-subtitle">A premium collection of cherished moments</p>
+        </div>
+    </header>
+
+    <!-- Main Gallery Section -->
+    <main class="gallery-container">
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Gallery items will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Fullscreen Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-image-container">
+                <img class="lightbox-image" id="lightboxImage" src="" alt="Gallery Image">
+                <div class="lightbox-caption" id="lightboxCaption"></div>
+            </div>
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gallery-footer">
+        <div class="footer-content">
+            <p>© <span id="currentYear"></span> Premium Gallery | All memories preserved</p>
+            <div class="footer-info">
+                <p><i class="fas fa-images"></i> <span id="totalImages">0</span> Images</p>
+                <p><i class="fas fa-eye"></i> Click any image to view fullscreen</p>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="Music/Boyz at the back.mp3" type="audio/mpeg">
+        <source src="Music/Boyz at the back.mp3" type="audio/ogg">
+        <source src="Music/Boyz at the back.mp3" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Music Control Indicator -->
+    <div class="music-indicator" id="musicIndicator">
+        <div class="music-icon">
+            <i class="fas fa-music"></i>
+            <div class="sound-waves">
+                <span class="wave"></span>
+                <span class="wave"></span>
+                <span class="wave"></span>
+            </div>
+        </div>
+        <div class="music-text">Music Playing</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
