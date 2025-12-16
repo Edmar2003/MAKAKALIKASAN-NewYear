@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKAKALIKASAN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div id="welcome-modal" class="modal">
+        <div class="modal-background">
+            <div class="stars"></div>
+            <div class="modal-fireworks" id="modal-fireworks"></div>
+        </div>
+        <div class="modal-container">
+            <div class="modal-content">
+                <h1 class="modal-title">Welcome to <span>MAKAKALIKASAN</span></h1>
+                <p class="modal-subtitle">Please enter your last name</p>
+                
+                <div class="input-container">
+                    <input type="text" id="lastname-input" placeholder="Enter your surname" autocomplete="off">
+                    <div class="input-glow"></div>
+                    <button id="enter-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div id="welcome-message" class="welcome-message">
+                </div>
+                
+                <div class="hint">Hint: Try entering your last name or a teacher's name</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="newyear-animation" class="newyear-animation hidden">
+        <div class="newyear-background"></div>
+        <div class="newyear-content">
+            <div class="newyear-title">Happy New Year 2026!</div>
+            <div class="newyear-subtitle">MAKAKALIKASAN Class of 2025</div>
+            
+            <div class="fireworks-container">
+                <div class="firework firework-1"></div>
+                <div class="firework firework-2"></div>
+                <div class="firework firework-3"></div>
+                <div class="firework firework-4"></div>
+                <div class="firework firework-5"></div>
+            </div>
+            
+            <div class="confetti-container">
+                <div class="confetti confetti-1"></div>
+                <div class="confetti confetti-2"></div>
+                <div class="confetti confetti-3"></div>
+                <div class="confetti confetti-4"></div>
+                <div class="confetti confetti-5"></div>
+                <div class="confetti confetti-6"></div>
+                <div class="confetti confetti-7"></div>
+                <div class="confetti confetti-8"></div>
+                <div class="confetti confetti-9"></div>
+                <div class="confetti confetti-10"></div>
+            </div>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-days">5</span>
+                    <span class="countdown-label">seconds</span>
+                </div>
+            </div>
+            
+            <div class="newyear-message">
+                <p>Wishing you all a year filled with joy, success, and beautiful memories!</p>
+                <p>May our friendship continue to grow in the coming year!</p>
+            </div>
+
+            <div class="big-firework-container">
+                <div class="big-firework-launcher"></div>
+                <div class="big-firework-explosion"></div>
+                <div class="big-firework-spark spark-1"></div>
+                <div class="big-firework-spark spark-2"></div>
+                <div class="big-firework-spark spark-3"></div>
+                <div class="big-firework-spark spark-4"></div>
+                <div class="big-firework-spark spark-5"></div>
+                <div class="big-firework-spark spark-6"></div>
+                <div class="big-firework-spark spark-7"></div>
+                <div class="big-firework-spark spark-8"></div>
+                <div class="big-firework-spark spark-9"></div>
+                <div class="big-firework-spark spark-10"></div>
+                <div class="big-firework-spark spark-11"></div>
+                <div class="big-firework-spark spark-12"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title">MAKAKALIKASAN</h1>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#journey" class="nav-link">Journey</a>
+                    <a href="#classmates" class="nav-link">Classmates</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                </div>
+                <div class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="class-picture-container">
+                    <img src="otherpath/Album3/ClassPicture.jpg" alt="MAKAKALIKASAN Class Picture" class="class-picture">
+                    <div class="picture-overlay">
+                        <h2>MAKAKALIKASAN</h2>
+                        <p>Class of 2025</p>
+                    </div>
+                </div>
+                <div class="graduation-info">
+                    <h3>We Graduated</h3>
+                    <div id="days-counter" class="days-counter">
+                        <span id="days">0</span>
+                        <span>days ago</span>
+                    </div>
+                    <p class="graduation-date">April 15, 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section id="journey" class="journey-section">
+            <div class="journey-fullscreen-bg" id="journey-bg"></div>
+            
+            <div class="journey-overlay-content">
+                <div class="section-header scroll-fade-in">
+                    <h2>Memory Highlights</h2>
+                    <p>Our most unforgettable moments captured forever</p>
+                </div>
+                
+                <div class="journey-slider-container">
+                    <div class="journey-slider">
+                        <div class="journey-slide active" data-bg="otherpath/AdditionalM5/30.jpg">
+                            <div class="slide-content">
+                                <h3>First month Together</h3>
+                                <p>Grade 11 The beningging of our amazing journey smiles turning into lifelong friendships.</p>
+                                <div class="memory-badge">
+                                    <i class="fas fa-heart"></i> Best Memory
+                                </div>
+
+                                <button class="full-view-btn" data-image="otherpath/AdditionalM5/30.jpg">
+                                    <i class="fas fa-expand"></i> Full View
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="journey-slide" data-bg="otherpath/Album/IMG20230920143929.jpg">
+                            <div class="slide-content">
+                                <h3>Movie Time: Elemental</h3>
+                                <p>Watching "Elemental" together laughing and crying at the class between characters and secretly hoping our teacher wouldn't quiz us too hard about the science parts!</p>
+                                <div class="memory-badge">
+                                    <i class="fas fa-film"></i> Movie Day
+                                </div>
+
+                                <button class="full-view-btn" data-image="otherpath/Album/IMG20230920143929.jpg">
+                                    <i class="fas fa-expand"></i> Full View
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="journey-slide active" data-bg="otherpath/Album/Grade-11-Makakalikasan.jpeg">
+                            <div class="slide-content">
+                                <h3>Catch Up Friday</h3>
+                                <p>Grade 11 Catch Up Fridays... honestly, IDK how to explain it.</p>
+
+                                <div class="slide-actions">
+                                    <div class="memory-badge">
+                                        <i class="fas fa-calendar-alt"></i> Friday Tradition
+                                    </div>
+
+                                    <button class="full-view-btn" data-image="otherpath/Album/Grade-11-Makakalikasan.jpeg">
+                                        <i class="fas fa-expand"></i> Full View
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="journey-slide active" data-bg="otherpath/Album/IMG20231009173743.jpg">
+                            <div class="slide-content">
+                                <h3>Teachers' Day Celebration</h3>
+                                <p>Honoring our amazing teachers with heartfelt performances and gratitude.</p>
+
+                                <div class="slide-actions">
+                                    <div class="memory-badge">
+                                        <i class="fas fa-chalkboard-teacher"></i> Teacher Appreciation
+                                    </div>
+
+                                    <button class="full-view-btn" data-image="otherpath/Album/IMG20231009173743.jpg">
+                                        <i class="fas fa-expand"></i> Full View
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="journey-slide active" data-bg="otherpath/AdditionalM5/14.jpg">
+                            <div class="slide-content">
+                                <h3>Year End Party</h3>
+                                <p>Celebrating the festive season with our class family! Games, delicious food, exchange gift, and lots of laughter made this Holiday party one of our most joyful memories together.</p>
+
+                                <div class="slide-actions">
+                                    <div class="memory-badge">
+                                        <i class="fas fa-gift"></i> Festive Celebration
+                                    </div>
+
+                                    <button class="full-view-btn" data-image="otherpath/AdditionalM5/14.jpg">
+                                        <i class="fas fa-expand"></i> Full View
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-slide" data-bg="otherpath/AdditionalM4/24.jpg">
+                            <div class="slide-content">
+                                <h3>Work Immersion Adventure</h3>
+                                <p>Our first taste of professional life, learning new skills, and realizing that classroom lessons actually make sense in the workplace.</p>
+                                <div class="memory-badge">
+                                    <i class="fas fa-briefcase"></i> Real World Prep
+                                </div>
+
+                                <button class="full-view-btn" data-image="otherpath/AdditionalM4/24.jpg">
+                                    <i class="fas fa-expand"></i> Full View
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="journey-slide" data-bg="otherpath/Album3/Intercultural-Dance.jpg">
+                            <div class="slide-content">
+                                <h3>Intercultural Dance</h3>
+                                <p>The rhythm of unity! Dancing together in perfect harmony celebrating different cultures through movement.</p>
+                                <div class="memory-badge">
+                                    <i class="fas fa-music"></i> Cultural Dance
+                                </div>
+
+                                <button class="full-view-btn" data-image="otherpath/Album3/Intercultural-Dance.jpg">
+                                    <i class="fas fa-expand"></i> Full View
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-slide" data-bg="otherpath/Album/GraduationClassPic.jpg">
+                            <div class="slide-content">
+                                <h3>Graduation Day</h3>
+                                <p>Tears of joy, proud smiles, and the realization that we made it through together.</p>
+                                <div class="memory-badge">
+                                    <i class="fas fa-graduation-cap"></i> Proud Moment
+                                </div>
+
+                                <button class="full-view-btn" data-image="otherpath/Album/GraduationClassPic.jpg">
+                                    <i class="fas fa-expand"></i> Full View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <div class="journey-controls">
+                        <button class="journey-btn prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="journey-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <div class="slide-counter">
+                                <span class="current-slide">1</span> / <span class="total-slides"></span>
+                            </div>
+                        </div>
+                        
+                        <button class="journey-btn next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="memory-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-camera"></i>
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Memories</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-laugh"></i>
+                        <span class="stat-number">Countless</span>
+                        <span class="stat-label">Smiles</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <span class="stat-number">??</span>
+                        <span class="stat-label">Friends</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Classmates Section -->
+        <section id="classmates" class="classmates-section">
+            <div class="section-header">
+                <h2>Our Class Family</h2>
+                <p>The people who made our journey unforgettable</p>
+            </div>
+            
+            <!-- Adviser Section -->
+            <div class="adviser-container">
+                <div class="adviser-card">
+                    <div class="adviser-image">
+                        <img src="Classmate-Picture/Adviser/flor.jpg">
+                    </div>
+                    <div class="adviser-info">
+                        <h3>Sir. Flor</h3>
+                        <p class="adviser-title">Our Beloved Adviser</p>
+                        <p class="adviser-quote">"The greatest gift you can give someone is your time, because when you give your time, you are giving a portion of your life that you will never get back."</p>
+                        <div class="adviser-tag">Adviser</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Students Section -->
+            <div class="students-container">
+                <div class="students-header">
+                    <h3>Our Classmates</h3>
+                    <div class="gender-filter">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="boys">Boys</button>
+                        <button class="filter-btn" data-filter="girls">Girls</button>
+                    </div>
+                </div>
+                
+                <div class="students-grid">
+                    <!-- Boys -->
+                    <div class="student-card boy" data-name="BELICARIO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Bilecario.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>BELICARIO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="CUNTAPAY">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Cuntapay.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>CUNTAPAY</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card boy" data-name="DE GUZMAN">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Deguzman.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>DE GUZMAN</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy special" data-name="GAGATAM">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Gagatam.jpg">
+                            <div class="special-badge">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="student-info">
+                            <h4>GAGATAM</h4>
+                            <p class="student-status">Always in our hearts</p>
+                            <div class="memorial-note">In Loving Memory</div>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="LAREDA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Lareda.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>LAREDA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="NAGA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Naga.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>NAGA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="NAKILA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Nakila.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>NAKILA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="PICARDAL">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Picardal.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>PICARDAL</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="SALVE">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Salve.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>SALVE</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="SENARILLOS">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Joshua.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>SENARILLOS</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="SEVILLA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Sivilla.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>SEVILLA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="SIERVO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Jv.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>SIERVO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="TAGABI">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Tagabi.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>TAGABI</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="TAMAYOSA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Tamayosa.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>TAMAYOSA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card boy" data-name="VILLARIN">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Villarin.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>VILLARIN</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Girls -->
+                    <div class="student-card girl" data-name="AKMAD">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Jewell.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>AKMAD</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="ARRIESGADO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Trisha.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>ARRIESGADO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="BALUYOT">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Baluyot.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>BALUYOT</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="CARANTO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Caranto.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>CARANTO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="DAPAT">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Dapat.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>DAPAT</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+
+                    <div class="student-card girl" data-name="DE ASA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/De Asa.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>DE ASA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="DEL ROSARIO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Shiela.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>DEL ROSARIO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="FRANCISCO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Francisco.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>FRANCISCO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="GARIANDO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Gariando.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>GARIANDO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="HERMO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Hermo.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>HERMO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="JUNIO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Junio.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>JUNIO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="LAMBANA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Stephanie.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>LAMBANA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="LASQUITE">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Lasquite.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>LASQUITE</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="MALLARI">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Mallari.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>MALLARI</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="MARCIANO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Cathie.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>MARCIANO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="MIMBALA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Mimbala.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>MIMBALA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="NAVARRO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Janin.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>NAVARRO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="OCAMPO">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Ocampo.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>OCAMPO</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="OMANDAM">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Omandam.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>OMANDAM</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="PARICA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Charm.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>PARICA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="PEROL">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Perol.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>PEROL</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="SALEM">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Salem.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>SALEM</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="SEKAK">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Sekak.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>SEKAK</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="URSAL">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Ursal.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>URSAL</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-card girl" data-name="ZARAGA">
+                        <div class="student-image">
+                            <img src="Classmate-Picture/Zaraga.jpg">
+                        </div>
+                        <div class="student-info">
+                            <h4>ZARAGA</h4>
+                            <p class="student-status">Classmate</p>
+                        </div>
+                    </div>
+                                        
+                </div>
+                
+                <div class="students-note">
+                    <p>Total: <span id="total-students">40</span> Classmates | <span id="boys-count">15</span> Boys | <span id="girls-count">25</span> Girls</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <h2>Memories Gallery</h2>
+                <p>Moments frozen in time, forever in our hearts</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="otherpath/AdditionalM5/30.jpg">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="otherpath/Album/GraduationClassPic.jpg">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="see-more-container">
+                    <a href="otherpath/index.html"  class="see-more-btn">
+                        <i class="fas fa-external-link-alt"></i> See More Memories
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div id="image-viewer" class="image-viewer hidden">
+            <button class="close-viewer">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="viewer-image-container">
+                <img id="fullscreen-image" src="">
+            </div>
+            <div class="viewer-controls">
+                <button class="viewer-btn prev-image-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="viewer-btn next-image-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <h2 class="footer-title">MAKAKALIKASAN</h2>
+                <p class="footer-subtitle">Class of 2025</p>
+                <p class="footer-quote">This is my last update… I think this is where I say goodbye. I tried my best but my head is too tired now.</p>
+
+                <div class="footer-icons">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-graduation-cap"></i>
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="newyear-trigger-container">
+        <button id="newyear-trigger-btn" class="newyear-trigger-btn">
+            <i class="fas fa-fire"></i>
+            CELEBRATE 2026
+        </button>
+    </div>
+
+    <div id="premium-newyear-animation" class="premium-newyear-animation">
+        <div class="night-sky-phase" id="night-sky-phase">
+            <div class="cosmic-background">
+                <div class="galaxy"></div>
+                <div class="premium-stars"></div>
+                <div class="twinkling-stars"></div>
+                <div class="shooting-star"></div>
+                <div class="shooting-star"></div>
+                <div class="shooting-star"></div>
+            </div>
+        </div>
+        
+        <div class="countdown-phase" id="countdown-phase">
+            <div class="premium-countdown">
+                <div class="countdown-glow"></div>
+                <div class="premium-countdown-number" id="premium-countdown">3</div>
+            </div>
+        </div>
+        
+        <div class="fireworks-phase" id="fireworks-phase">
+            <div class="premium-fireworks-container" id="premium-fireworks"></div>
+            <div class="golden-rain">
+                <div class="rain-drop"></div>
+                <div class="rain-drop"></div>
+                <div class="rain-drop"></div>
+                <div class="rain-drop"></div>
+                <div class="rain-drop"></div>
+                <div class="rain-drop"></div>
+                <div class="rain-drop"></div>
+                <div class="rain-drop"></div>
+                <div class="rain-drop"></div>
+            </div>
+        </div>
+        
+        <div class="welcome-phase" id="welcome-phase">
+            <div class="welcome-2026-container">
+                <h1 class="welcome-2026-title">WELCOME 2026</h1>
+                <p class="welcome-2026-subtitle">MAKAKALIKASAN • CLASS OF 2025</p>
+                <div class="welcome-2026-message">
+                    <p>A new chapter begins with endless possibilities!</p>
+                    <p>May this year bring you joy beyond measure, success beyond dreams, and memories beyond compare.</p>
+                    <p>Our bond transcends time and distance. Here's to another year of friendship!</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="premium-close-btn" id="premium-close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <audio id="background-music" loop preload="auto">
+        <source src="Music/HAPPY NEW YEAR MAKANATURE.mp3" type="audio/mpeg">
+        <source src="Music/HAPPY NEW YEAR MAKANATURE.mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
