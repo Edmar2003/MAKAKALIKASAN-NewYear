@@ -60,12 +60,39 @@
             font-size: 1.8rem;
             max-width: 800px;
             line-height: 1.6;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             background-color: rgba(0, 20, 40, 0.7);
             padding: 2rem;
             border-radius: 10px;
             border: 1px solid rgba(100, 180, 255, 0.3);
             box-shadow: 0 0 25px rgba(100, 180, 255, 0.2);
+        }
+        
+        .temp-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem 2.5rem;
+            background-color: rgba(0, 40, 70, 0.8);
+            border-radius: 50px;
+            border: 1px solid rgba(100, 220, 255, 0.5);
+            box-shadow: 0 0 20px rgba(100, 220, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .temp-link {
+            color: #7df9ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-bottom: 2px dotted rgba(125, 249, 255, 0.5);
+        }
+        
+        .temp-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px #7df9ff;
+            border-bottom: 2px solid #7df9ff;
         }
         
         .contact-info {
@@ -126,6 +153,15 @@
                 padding: 1.5rem;
             }
             
+            .temp-message {
+                font-size: 1.2rem;
+                padding: 1rem 1.5rem;
+            }
+            
+            .temp-link {
+                font-size: 1.4rem;
+            }
+            
             .contact-info {
                 font-size: 1.1rem;
             }
@@ -139,6 +175,15 @@
             .apology {
                 font-size: 1.2rem;
                 padding: 1rem;
+            }
+            
+            .temp-message {
+                font-size: 1rem;
+                padding: 0.8rem 1.2rem;
+            }
+            
+            .temp-link {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -156,6 +201,9 @@
             <div class="status">Expected to be back online in a few days</div>
         </div>
         
+        <div class="temp-message">
+            ✦ Visit the <a href="https://edmar2003.github.io/Preview/" class="temp-link">1nd Release</a> of the website in the meantime ✦
+        </div>
     </div>
 
     <script>
@@ -280,4 +328,3 @@
     </script>
 </body>
 </html>
-
